@@ -306,7 +306,7 @@ namespace Kalkylator
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.WindowFrame;
-            ClientSize = new Size(583, 524);
+            ClientSize = new Size(300, 524);
             Controls.Add(button1);
             Controls.Add(Uträkningar);
             Controls.Add(textBox3);

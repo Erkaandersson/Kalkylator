@@ -94,6 +94,7 @@ namespace Kalkylator
                         textBox1.Text = answer.ToString();
                         calculations.Add($"{number1} {sign} {number2} = {answer}");
                         break;
+
                     }
                 default:
                     break;
@@ -101,14 +102,18 @@ namespace Kalkylator
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //En kontrollstruktur för att inte kunna skriva bokstäver i textboxen för uträknmingar.
+    
+            //En kontrollstruktur för att inte kunna skriva bokstäver i textboxen för uträkningar.
             string text = textBox1.Text;    
             foreach (char c in text)
             {
-                if (!Char.IsDigit(c))
+                if (Char.IsDigit(c) || c == ',')
                 {
-                    textBox3.Text = "Endast siffror är tillåtna!";
-      
+                    continue;
+                }
+                else
+                {
+                    textBox3.Text = "Endast siffror tillåtna!";
                     textBox1.Clear();
                 }
             }
@@ -173,7 +178,6 @@ namespace Kalkylator
         //För att rensa textbox 1, och göra en ny uträkning.
         private void cBtn_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "C";
             textBox1.Clear();
         }
 
